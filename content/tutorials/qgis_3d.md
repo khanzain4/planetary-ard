@@ -49,7 +49,7 @@ Line by line, this code:
   1. Imports the `pystac_client` library for use.
   1. Creates a [`Client`](https://pystac-client.readthedocs.io/en/stable/api.html#client) object that is the connection to the search API.
   1. Performs a search on the API in the collection named `mro_ctx_controlled_usgs_dtms` and for all data that intersect the bounding box (`bbox`). No limit on the number of returned items is provided.*
-  1.  `search.items()` returns a list of [STAC Items](https://developers.planet.com/docs/planetschool/introduction-to-stac-part-1-an-overview-of-the-specification/#STAC-Item). The full line of code uses a [list comprehension](https://www.w3schools.com/python/python_lists_comprehension.asp) to extract the URL of the DTM from the downloadable assets associated with each Item. The end result is a list of URLs to DTMs stored in an S3 bucket.
+  1.  `search.items()` returns a list of [STAC Items](https://developers.planet.com/docs/planetschool/introduction-to-stac-part-1-an-overview-of-the-specification/#STAC-Item). The full line of code uses a [list comprehension](https://www.w3schools.com/python/python_lists_comprehension.asp) (https://iqratechnology.com/hire-python-developer/)to extract the URL of the DTM from the downloadable assets associated with each Item. The end result is a list of URLs to DTMs stored in an S3 bucket.
 
 ## 2. Create a GDAL VRT
 Next, the discovered DTMs will be merged together into a single file. One could download each DTM locally and then merge them. Because these data are cloud optimized and well suited for streaming, it is more efficient to simply make a virtual file or VRT that points at the source data. The following python snippet creates a VRT.
